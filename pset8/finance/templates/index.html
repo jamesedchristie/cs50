@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <p><h4>Portfolio of {{ user[0]['username'] }}</h4></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Company</th>
+                <th>Shares Owned</th>
+                <th>Share Price</th>
+                <th>Value</th>
+                <th>Buy/Sell</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for x in range(n) %}
+        <tr>
+            <td>
+                {{ companies[x]['symbol'] }}
+            </td>
+            <td>
+                {{ companies[x]['name'] }}
+            </td>
+            <td>
+                {{ portfolio[x]['SUM(shares)'] }}
+            </td>
+            <td>
+                ${{ companies[x]['price'] }}
+            </td>
+            <td>
+                ${{ (portfolio[x]['SUM(shares)'] * companies[x]['price']) }}
+            </td>
+            <td><div class="form-group">
+                <form action="" method="post" id="buysell">
+                    <input class="form-control col-md-2" type="text" name="shares" placeholder="0">
+                    <input type="hidden" name="symbol" value="{{ companies[x]['symbol'] }}">
+                </form>
+                <button class="btn btn-primary" onclick="buy();">Buy</button>
+                <button class="btn btn-primary" onclick="sell();">Sell</button>
+                <script>
+                    function buy()
+                    {
+                        form=document.getElementById("buysell");
+                        form.action="/buy";
+                        form.submit();
+                    }
+
+                    function sell()
+                    {
+                        form=document.getElementById("buysell");
+                        form.action="/sell";
+                        form.submit();
+                    }
+                </script>
+            </div></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>${{ cash }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>${{ cash + total }}</td>
+        </tr>
+        </tbody>
+
+    </table>
+{% endblock %}

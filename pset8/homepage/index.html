@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>74 Curlewis</title>
+    </head>
+    <body>
+        <div class="text-center">
+        <p><h1>74 Curlewis St</h1></p>
+        <p><h2 class="text-muted"><a href="https://www.google.com/maps/place/Bondi+Beach">Bondi Beach, NSW, 2026</a></h2></p>
+        <p><h5>Welcome to the homepage of the 74 Curlewis St household!</h5></p>
+        <p><img src="beach panorama small.jpg"></p>
+
+        <p>Who would you like to visit?
+        <div class="row">
+        <div class="col-3 mx-auto">
+        <div class="text-center">
+        <select class="form-control text-center" id="name">
+            <option>--</option>
+            <option value = "james.html">James</option>
+            <option value="jasmin.html">Jasmin</option>
+            <option value="charles.html">Charles</option>
+        </select></p>
+        </div>
+        </div>
+        </div>
+        <p id="greeting"></p>
+        <script>
+            document.querySelector('#name').onchange = function() {
+                location = this.value;
+            }
+        </script>
+        </div>
+    </body>
+</html>

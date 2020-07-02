@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <p><h4>Trade history of {{ user[0]['username'] }}</h4></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for x in range(n) %}
+        <tr>
+            <td>
+                {{ history[x]['company'] }}
+            </td>
+            <td>
+                {{ history[x]['shares'] }}
+            </td>
+            <td>
+                ${{ history[x]['price'] }}
+            </td>
+            <td>
+                {{ history[x]['time'] }}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

@@ -1,0 +1,30 @@
+img
+{
+    border: 1px solid black;
+}
+
+h1
+{
+    text-decoration: underline overline;
+}
+
+h2
+{
+    text-decoration: underline;
+}
+a
+{
+    color: inherit;
+}
+a:hover
+{
+    color: inherit;
+}
+a:visited
+{
+    color: inherit;
+}
+a:active
+{
+    color: inherit;
+}
