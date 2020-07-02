@@ -34,6 +34,7 @@ Projects completed as part of CS50 Intro to Computer Science course, taken onlin
  ## pset8
  - The project was to make a website where users could register an account and trade stocks.
  
- 
- 
- 
+ ## Apps - AndroidStudio
+ - Pokedex : A simple database of pokemon connected to an API
+ - Fiftygram : A simple image filter
+ - Notes : A simple note taking app 
